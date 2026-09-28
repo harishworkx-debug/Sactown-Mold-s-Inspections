@@ -4,9 +4,9 @@ import { ArrowRight, Check, ChevronDown, ClipboardCheck, Droplets, FileText, Hom
 import Seo from "@/components/Seo";
 import { DISPLAY_PHONE, PHONE, areas as allAreas, services as allServices } from "@/components/SiteShell";
 
-const heroImage = "/manus-storage/sactown-hero_40fc0dc3.jpg";
-const inspectionImage = "/manus-storage/sactown-inspection-detail_842490f2.jpg";
-const airImage = "/manus-storage/sactown-air-quality_caf7ba3d.jpg";
+import heroImage from "@/assets/images/hero.jpg";
+import inspectionImage from "@/assets/images/inspection.jpg";
+import airImage from "@/assets/images/air-quality.jpg";
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
