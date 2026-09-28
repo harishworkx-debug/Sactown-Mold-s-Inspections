@@ -1,19 +1,6 @@
-import { Link } from "wouter";
-import { ArrowRight, Check, ChevronDown, MapPin, Phone } from "lucide-react";
-import Seo from "@/components/Seo";
-import { DISPLAY_PHONE, PHONE } from "@/components/SiteShell";
+import fs from "fs";
 
-type Location = { 
-  name: string; 
-  path: string; 
-  intro: string; 
-  paragraphs: string[]; 
-  neighborhoods: string[]; 
-  concerns: string[]; 
-  faqs: [string, string][] 
-};
-
-const locations: Record<string, Location> = {
+const locationsData = {
   sacramento: {
     name: "Sacramento",
     path: "/mold-inspector-sacramento-ca",
@@ -186,21 +173,37 @@ const locations: Record<string, Location> = {
   }
 };
 
+const fileContent = \`import { Link } from "wouter";
+import { ArrowRight, Check, ChevronDown, MapPin, Phone } from "lucide-react";
+import Seo from "@/components/Seo";
+import { DISPLAY_PHONE, PHONE } from "@/components/SiteShell";
+
+type Location = { 
+  name: string; 
+  path: string; 
+  intro: string; 
+  paragraphs: string[]; 
+  neighborhoods: string[]; 
+  concerns: string[]; 
+  faqs: [string, string][] 
+};
+
+const locations: Record<string, Location> = \${JSON.stringify(locationsData, null, 2)};
+
 export default function LocationPage({ slug }: { slug: string }) {
   const location = locations[slug] ?? locations.sacramento;
-  
   const schema = { 
     "@context": "https://schema.org", 
     "@type": "Service", 
-    name: `Mold inspector in ${location.name}`, 
+    name: \`Mold inspector in \${location.name}\`, 
     description: location.intro, 
-    provider: { "@type": "ProfessionalService", name: "Sactown Mold Inspections", telephone: DISPLAY_PHONE }, 
+    provider: { "@type": "ProfessionalService", name: "Sactown Mold's Inspections", telephone: DISPLAY_PHONE }, 
     areaServed: location.name 
   };
   
   return (
     <>
-      <Seo title={`Mold Inspector ${location.name} CA | Sactown Mold Inspections`} description={location.intro} path={location.path} schema={schema} />
+      <Seo title={\`Mold Inspector \${location.name} CA | Sactown Mold's Inspections\`} description={location.intro} path={location.path} schema={schema} />
       
       <section className="bg-[#19352d] text-[#f6f5f0]">
         <div className="container py-20 sm:py-28">
@@ -214,7 +217,7 @@ export default function LocationPage({ slug }: { slug: string }) {
             <p className="mt-7 max-w-2xl text-lg leading-8 text-[#d5e0d5]">
               {location.intro}
             </p>
-            <a href={`tel:${PHONE}`} className="button-accent mt-9">
+            <a href={\`tel:\${PHONE}\`} className="button-accent mt-9">
               <Phone size={17} /> Call now · {DISPLAY_PHONE}
             </a>
           </div>
@@ -285,7 +288,7 @@ export default function LocationPage({ slug }: { slug: string }) {
             <p className="body-copy">
               We serve Sacramento first and schedule nearby appointments based on property type, concern, scope, and timing.
             </p>
-            <a href={`tel:${PHONE}`} className="button-primary mt-8">
+            <a href={\`tel:\${PHONE}\`} className="button-primary mt-8">
               <Phone size={16} /> Speak with an inspector
             </a>
           </div>
@@ -323,3 +326,7 @@ export default function LocationPage({ slug }: { slug: string }) {
 }
 
 export { locations };
+\`;
+
+fs.writeFileSync("client/src/pages/LocationPage.tsx", fileContent, "utf-8");
+console.log("LocationPage.tsx updated successfully.");

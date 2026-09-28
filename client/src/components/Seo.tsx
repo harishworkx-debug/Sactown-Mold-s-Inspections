@@ -16,7 +16,7 @@ export default function Seo({ title, description, path, schema }: SeoProps) {
     setMeta("keywords", keywords);
     setMeta("robots", "index, follow");
     setMeta("geo.region", "US-CA"); setMeta("geo.placename", "Sacramento");
-    setMeta("og:title", title, true); setMeta("og:description", description, true); setMeta("og:type", "website", true); setMeta("og:url", `${SITE_URL}${path}`, true); setMeta("og:site_name", "Sactown Mold's Inspections", true); setMeta("og:locale", "en_US", true); setMeta("og:image", `${SITE_URL}/manus-storage/sactown-hero_40fc0dc3.jpg`, true); setMeta("twitter:card", "summary_large_image"); setMeta("twitter:image", `${SITE_URL}/manus-storage/sactown-hero_40fc0dc3.jpg`);
+    setMeta("og:title", title, true); setMeta("og:description", description, true); setMeta("og:type", "website", true); setMeta("og:url", `${SITE_URL}${path}`, true); setMeta("og:site_name", "Sactown Mold Inspections", true); setMeta("og:locale", "en_US", true); setMeta("og:image", `${SITE_URL}/manus-storage/sactown-hero_40fc0dc3.jpg`, true); setMeta("twitter:card", "summary_large_image"); setMeta("twitter:image", `${SITE_URL}/manus-storage/sactown-hero_40fc0dc3.jpg`);
     let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
     if (!canonical) { canonical = document.createElement("link"); canonical.rel = "canonical"; document.head.appendChild(canonical); }
     canonical.href = `${SITE_URL}${path}`;
