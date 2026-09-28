@@ -3,8 +3,8 @@ import { ArrowRight, Check, ChevronDown, ClipboardCheck, FileText, Phone, Shield
 import Seo from "@/components/Seo";
 import { DISPLAY_PHONE, PHONE } from "@/components/SiteShell";
 
-const detailImage = "/manus-storage/sactown-inspection-detail_842490f2.jpg";
-const airImage = "/manus-storage/sactown-air-quality_caf7ba3d.jpg";
+import airImage from "@/assets/air-quality.jpg";
+import detailImage from "@/assets/inspection-detail.jpg";
 
 type Service = { slug: string; path: string; title: string; h1: string; description: string; eyebrow: string; intro: string; why: string; lookFor: string[]; deliverables: string[]; bestFor: string; faqs: [string, string][]; related: [string, string][]; image: string; imageAlt: string };
 
