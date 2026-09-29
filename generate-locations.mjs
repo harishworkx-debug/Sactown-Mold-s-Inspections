@@ -13,7 +13,7 @@ const locationsData = {
     neighborhoods: ["Downtown", "Land Park", "Natomas", "South Sacramento", "Pocket-Greenhaven", "Tahoe Park"],
     concerns: ["Historic home plumbing leaks", "Attic and crawl space humidity", "Commercial building HVAC mold", "Winter storm water intrusion", "Hidden mold behind drywall", "Post-renovation moisture issues"],
     faqs: [
-      ["How do I schedule a residential mold inspection in Sacramento?", "Call +1 916-665-4249 with your address and a brief description of the moisture or odor concern. We will guide you through the process."],
+      ["How do I schedule a residential mold inspection in Sacramento?", "Call +1 916-963-8773 with your address and a brief description of the moisture or odor concern. We will guide you through the process."],
       ["Do you offer commercial mold inspections?", "Yes, we routinely inspect Sacramento commercial properties, offices, and retail spaces for indoor air quality and moisture concerns."],
       ["Is mold testing always necessary?", "Not always. We start with a thorough visual moisture inspection. If testing is needed to answer specific questions, we will recommend the appropriate air or surface sampling."]
     ]

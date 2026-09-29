@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { ArrowUpRight, ChevronDown, Menu, Phone, ShieldCheck, X } from "lucide-react";
 
-const PHONE = "+19166654249";
-const DISPLAY_PHONE = "916-665-4249";
+const PHONE = "+19169638773";
+const DISPLAY_PHONE = "(916) 963-8773";
 
 const services = [
   ["Mold Inspection", "/mold-inspection-sacramento-ca"], ["Residential Mold Inspection", "/residential-mold-inspection-sacramento-ca"], ["Black Mold Inspection", "/black-mold-inspection-sacramento-ca"], ["Mold Testing", "/mold-testing-sacramento-ca"], ["Air Quality Testing", "/air-quality-testing-sacramento-ca"], ["Indoor Air Quality", "/indoor-air-quality-sacramento-ca"], ["Moisture Inspection", "/moisture-inspection-sacramento-ca"], ["Mold Detection", "/mold-detection-sacramento-ca"], ["Mold Assessment", "/mold-assessment-sacramento-ca"], ["Water Damage Mold Inspection", "/water-damage-mold-inspection-sacramento-ca"],
