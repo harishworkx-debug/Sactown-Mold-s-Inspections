@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/air-quality-testing-sacramento-ca",
+      "destination": "/indoor-air-quality-sacramento-ca",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

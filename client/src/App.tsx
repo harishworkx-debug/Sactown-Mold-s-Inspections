@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { Route, Switch, useLocation } from "wouter";
+import { Redirect, Route, Switch, useLocation } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import SiteShell from "./components/SiteShell";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
+import GuidePage, { guides } from "./pages/GuidePage";
 import Home from "./pages/Home";
 import LocationPage from "./pages/LocationPage";
 import NotFound from "./pages/NotFound";
@@ -16,7 +17,6 @@ export const serviceRoutes = [
   ["/residential-mold-inspection-sacramento-ca", "residential-mold-inspection"],
   ["/black-mold-inspection-sacramento-ca", "black-mold-inspection"],
   ["/mold-testing-sacramento-ca", "mold-testing"],
-  ["/air-quality-testing-sacramento-ca", "air-quality-testing"],
   ["/indoor-air-quality-sacramento-ca", "indoor-air-quality"],
   ["/moisture-inspection-sacramento-ca", "moisture-inspection"],
   ["/mold-detection-sacramento-ca", "mold-detection"],
@@ -52,6 +52,13 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/about" component={AboutPage} />
       <Route path="/contact" component={ContactPage} />
+      <Route path="/guides"><GuidePage /></Route>
+      {Object.keys(guides).map((slug) => (
+        <Route key={slug} path={`/guides/${slug}`}>
+          <GuidePage slug={slug} />
+        </Route>
+      ))}
+      <Route path="/air-quality-testing-sacramento-ca"><Redirect to="/indoor-air-quality-sacramento-ca" replace /></Route>
       {serviceRoutes.map(([path, slug]) => <Route key={path} path={path}><ServicePage slug={slug} /></Route>)}
       {areaRoutes.map(([path, slug]) => <Route key={path} path={path}><LocationPage slug={slug} /></Route>)}
       <Route path="/404" component={NotFound} />

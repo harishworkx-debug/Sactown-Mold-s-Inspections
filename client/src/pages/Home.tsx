@@ -50,7 +50,7 @@ const services = [
 export default function Home() {
   useEffect(() => { document.documentElement.style.scrollBehavior = "smooth"; return () => { document.documentElement.style.scrollBehavior = "auto"; }; }, []);
   return <>
-    <Seo title="Mold Inspection Sacramento CA | Sactown Mold Inspections" description="Professional mold inspection and mold testing in Sacramento, CA. Sactown Mold Inspections helps identify mold, moisture and indoor air quality concerns. Call (916) 963-8773." path="/" schema={[localBusinessSchema, faqSchema]} />
+    <Seo title="Mold Inspection Sacramento, CA | Sactown Mold's Inspections" description="Professional mold inspections, mold testing and moisture assessments in Sacramento, CA. Contact Sactown Mold's Inspections to schedule an inspection." path="/" schema={[localBusinessSchema, faqSchema]} />
     <section className="relative isolate overflow-hidden bg-[#19352d] text-[#f6f5f0]">
       <div className="absolute inset-0"><img src={heroImage} alt="Inspector using a moisture meter inside a Sacramento home" className="h-full w-full object-cover object-center opacity-65" /><div className="absolute inset-0 bg-gradient-to-r from-[#102a24] via-[#19352d]/88 to-[#19352d]/25" /><div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(217,166,106,.18),transparent_32%)]" /></div>
       <div className="container relative grid min-h-[670px] items-end gap-12 py-20 lg:grid-cols-[1.08fr_.92fr] lg:items-center lg:py-28">
